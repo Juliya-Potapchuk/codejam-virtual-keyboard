@@ -39,7 +39,23 @@ const keyCode = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 
 
 for (let i = 0; i < keys.length; i++) {
     var button = document.createElement('button');
-       button.append(keys[i]);
-       button.classList.add(keyCode[i]);
-       keyboard.append(button);
+    button.append(keys[i]);
+    button.classList.add(keyCode[i]);
+    keyboard.append(button);
 }
+
+textarea.focus();
+
+document.addEventListener('keydown', function(event) {
+    const code = event.code;
+    const codeClass = document.querySelector('.' + code);
+    codeClass.classList.add('active');
+    textarea.focus();
+});
+
+document.addEventListener('keyup', function(event) {
+    const code = event.code;
+    const codeClass = document.querySelector('.' + code);
+    codeClass.classList.remove('active');
+    textarea.focus();
+});

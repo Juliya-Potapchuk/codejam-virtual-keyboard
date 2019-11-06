@@ -59,3 +59,19 @@ document.addEventListener('keyup', function(event) {
     codeClass.classList.remove('active');
     textarea.focus();
 });
+
+keyboard.addEventListener('mousedown', function(event) {
+    if (event.target.className === 'keyboard') {
+        return;
+    }
+    const mousedownButton = event.target;
+    mousedownButton.classList.add('active');
+    textarea.value += mousedownButton.innerText;
+    textarea.focus();
+});
+ 
+keyboard.addEventListener('click', function(event) {
+    const clickButton = event.target;
+    clickButton.classList.remove('active');
+    textarea.focus();
+  });

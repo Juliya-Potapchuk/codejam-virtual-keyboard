@@ -1,0 +1,13 @@
+textarea {
+    display: block;
+    margin: 10px auto;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 980px;
+    height: 323px;
+    margin: 0 auto;
+}
+    

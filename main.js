@@ -37,12 +37,12 @@ const keyCode = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 
 'ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight',
 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight'];
 
-for (let i = 0; i < keys.length; i++) {
+keys.forEach(function(item, i) {
     var button = document.createElement('button');
-    button.append(keys[i]);
+    button.append(item);
     button.classList.add(keyCode[i]);
     keyboard.append(button);
-}
+});
 
 textarea.focus();
 
@@ -63,7 +63,7 @@ document.addEventListener('keyup', function(event) {
 keyboard.addEventListener('mousedown', function(event) {
     if (event.target.className === 'keyboard') {
         return;
-    }
+    };
     const mousedownButton = event.target;
     mousedownButton.classList.add('active');
     textarea.value += mousedownButton.innerText;

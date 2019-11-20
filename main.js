@@ -44,6 +44,11 @@ keys.forEach(function(item, i) {
     keyboard.append(button);
 });
 
+const arrayNumbersButtons = [13, 14, 28, 29, 41, 42, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63];
+    arrayNumbersButtons.forEach(function(item) {
+        keyboard.childNodes[item].classList.add('button-gradient');
+ });
+
 textarea.focus();
 
 document.addEventListener('keydown', function(event) {
